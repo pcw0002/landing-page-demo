@@ -20,8 +20,8 @@ export enum IconType {
 export const cardData: Card[] = [
   {
     title: 'Location tracking',
-    description: 'Automically collects periodic locations of each animal',
-    content: 'Automically collections periodic locations of each animal',
+    description: 'Automatically collects periodic locations of each animal',
+    content: 'Automatically collects periodic locations of each animal',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     image: 'https://picsum.photos/200/300',
     icon: IconType.Location
@@ -64,7 +64,7 @@ export const cardData: Card[] = [
   },
   {
     title: 'Ranch sensors',
-    description: 'Water, gate and other sensors are available to remotely monitor ranch infrastructure',
+    description: 'Water, gate, and other sensors are available to remotely monitor ranch infrastructure',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     image: 'https://picsum.photos/200/300',
