@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Outfit } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Outfit({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Example Next App',
-  description: 'Example Next.js app with TypeScript, ESLint, Jest, and Prettier',
+  title: 'MicroTraks Ranch',
+  description: 'Track your valuable exotics with MicroTraks Ranch.',
 }
 
 export default function RootLayout({

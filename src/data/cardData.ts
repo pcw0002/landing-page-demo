@@ -4,49 +4,71 @@ type Card = {
   content?: string;
   footer?: string;
   image: string;
+  icon: IconType;
 }
+
+export enum IconType {
+  Location,
+  GeoFence,
+  HistoricalData,
+  ZoneReporting,
+  ActivityAlerts,
+  Sensors
+}
+
 
 export const cardData: Card[] = [
   {
-    title: 'Card 1',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
+    title: 'Location tracking',
+    description: 'Automically collects periodic locations of each animal',
+    content: 'Automically collections periodic locations of each animal',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
-    image: 'https://picsum.photos/200/300'
+    image: 'https://picsum.photos/200/300',
+    icon: IconType.Location
   },
   {
-    title: 'Card 2',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
+    title: 'Historical data',
+    description: 'View location and activity history for your animals',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
-    image: 'https://picsum.photos/200/300'
+    image: 'https://picsum.photos/200/300',
+    icon: IconType.HistoricalData
+
   },
   {
-    title: 'Card 3',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
+    title: 'Geo-fencing',
+    description: 'Receive notifications for animals that escape their pens',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
-    image: 'https://picsum.photos/200/300'
+    image: 'https://picsum.photos/200/300',
+    icon: IconType.GeoFence
+
   },
   {
-    title: 'Card 4',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
+    title: 'Zone reporting',
+    description: 'MicroTraks receivers create mesh zones that actively monitor animals, such as at water or feed stations',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
-    image: 'https://picsum.photos/200/300'
+    image: 'https://picsum.photos/200/300',
+    icon: IconType.ZoneReporting
+
   },
   {
-    title: 'Card 5',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
+    title: 'Activity alerts',
+    description: 'Collect fine-grain animal activity and receive alerts based on activity thresholds',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
-    image: 'https://picsum.photos/200/300'
+    image: 'https://picsum.photos/200/300',
+    icon: IconType.ActivityAlerts
+
   },
   {
-    title: 'Card 6',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
+    title: 'Ranch sensors',
+    description: 'Water, gate and other sensors are available to remotely monitor ranch infrastructure',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
-    image: 'https://picsum.photos/200/300'
+    image: 'https://picsum.photos/200/300',
+    icon: IconType.Sensors
+
   }
 ]

@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hover\:custom-scale-102:hover {
+    transform: scale(1.02);
+  }
+
+
+
+.gradient-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        rgba(255, 255, 255, 1),   /* Transparent color at the top */
+        rgba(255, 255, 255, 0),   /* Transparent color at the top */
+        rgba(255, 255, 255, 0),   /* Opaque color in the middle (white) */
+        rgba(255, 255, 255, 0),    /* Transparent color at the bottom */
+        rgba(255, 255, 255, .05),    /* Transparent color at the bottom */
+        rgba(255, 255, 255, 1)    /* Transparent color at the bottom */
+      );
+  }

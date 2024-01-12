@@ -1,113 +1,124 @@
 "use client";
 
-import Image from 'next/image'
-import NavBar from '@/components/NavBar'
-import InfoCard from '@/components/InfoCard'
+import Image from "next/image";
+import NavBar from "@/components/NavBar";
+import InfoCard from "@/components/InfoCard";
 
-import { cardData } from '@/data/cardData'
+import { cardData } from "@/data/cardData";
+import OpenIcon from "@mui/icons-material/OpenInNew";
+
+import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   return (
     <>
-    <main className="flex min-h-screen min-w-screen flex-col items-center gap-16 px-24">
-      <NavBar />
-      <div className='flex flex-col gap-6 m-4 md:flex-row justify-start align-top'>
-        <Image
-          className="dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert rounded-md"
-          src="/placeholder.jpg"
-          alt="Placeholder image"
-          width={450}
-          height={300}
-          priority
-        />
-        <div className='flex flex-col p-2 h-max'>
-          <h1 className='text-xl font-bold'>Lorem Title</h1>
-          <p className='md:m-2 md:mb-0 mb-2 m-0 text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, voluptatum.</p>
-          <p className='md:m-2 md:mb-0 mb-2 m-0 text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, voluptatum.</p>
-          <p className='md:m-2 md:mb-0 mb-2 m-0 text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, voluptatum.</p>
+      <main className="flex min-h-screen min-w-screen flex-col items-center text-slate-700">
+        <NavBar />
+        <div className="flex flex-col gap-6 mx-12 mt-14 justify-center items-center align-top">
+          <div className="flex flex-row items-center justify-center min-w-[448px]">
+            <div className="text-5xl font-bold whitespace-nowrap">
+              Where are my&nbsp;
+            </div>
+            {<ExampleComponent />}
+          </div>
+
+          <p className="mb-2 mt-2 text-xl text-slate-500 max-w-xl text-center">
+            Track your animals and monitor the status of your ranch like never
+            before with <b>MicroTraks Ranch.</b>
+          </p>
+          <div className="flex flex-row items-start justify-center ">
+            <div className="flex flex-col items-center justify-center ">
+              <button className="px-6 py-2 text-lg font-semibold text-white transition duration-200 ease-in-out bg-green-700 border-solid border-2 hover:border-green-600 hover:bg-green-600 border-green-700 rounded-md  hover:custom-scale-102">
+                Go to Ranch
+              </button>
+              <p className="mt-1 italic text-sm text-gray-500">
+                Already a customer?
+              </p>
+            </div>
+            <button className="px-6 py-2 ml-4 text-lg font-semibold  text-green-700 transition duration-200 border-solid border-2 border-green-700 ease-in-out bg-transparent hover:bg-gray-100 rounded-md hover:bg-gray-100 hover:custom-scale-102">
+              Contact Us
+            </button>
+          </div>
         </div>
-      </div>
+        <div className="-mt-48 -mb-28 -z-50">
+          <YourComponent />
+        </div>
 
-      <div className="pb-32 grid text-center gap-3 lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
-        {cardData.map((card) => (
-          <InfoCard
-            key={card.title}
-            title={card.title}
-            description={card.description}
-            content={card.content}
-            footer={card.footer}
-          />
-        ))}
-        {/* Commenting this out below in case you want to opt to NOT use the shadcn card and want something more css and vanilla html */}
-        {/* <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <div className="flex flex-col items-center justify-center gap-10  mx-12">
+          <div className="text-5xl font-semibold">We've got you covered.</div>
+          <div className="lg:px-12 pb-16 grid text-center grid-cols-2 gap-3 lg:max-w-5xl lg:mb-0 lg:grid-cols-3">
+            {cardData.map((card) => (
+              <InfoCard
+                key={card.title}
+                title={card.title}
+                description={card.description}
+                content={card.content}
+                footer={card.footer}
+                icon={card.icon}
+              />
+            ))}
+          </div>
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a> */}
-      </div>
-    </main>
+        <div className="flex flex-row items-center justify-center gap-2 mb-4">
+          <a
+            className="text-sm text-gray-500 hover:text-gray-700"
+            href="https://www.microtraks.com"
+          >
+            © 2023 MicroTraks, Inc.
+          </a>
+        </div>
+      </main>
     </>
-  )
+  );
 }
+
+const ExampleComponent = () => {
+  return (
+    <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        "kudu?",
+        2400, // wait 1s before replacing "Mice" with "Hamsters"
+        "gemsbock?",
+        2400,
+        "cape buffalo?",
+        2400,
+        "addax?",
+        2400,
+        "zebras?",
+        2400,
+        "oryx?",
+        2400,
+        "animals?",
+        6000,
+      ]}
+      wrapper="strong"
+      // speed= {{type: 'keyStrokeDelayInMs', value: 100}}
+      speed={5}
+      className="text-5xl font-bold whitespace-nowrap text-green-700"
+      repeat={Infinity}
+      cursor={true}
+      preRenderFirstString={true}
+    />
+  );
+};
+
+const YourComponent = () => {
+  return (
+    <div className="relative">
+      {/* Replace 'your-image.jpg' with your actual image source */}
+      <Image
+        src="/oryx_copy.jpg"
+        alt="Your Image Alt Text"
+        layout="responsive"
+        width={1920}
+        height={1080}
+        className="w-full h-full"
+      />
+
+      {/* Gradient overlay */}
+      <div className="absolute top-0 left-0 right-0 bottom-0 gradient-overlay"></div>
+    </div>
+  );
+};
