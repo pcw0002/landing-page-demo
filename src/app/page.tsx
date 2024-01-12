@@ -12,7 +12,7 @@ import { TypeAnimation } from "react-type-animation";
 export default function Home() {
   return (
     <>
-      <main className="flex min-h-screen min-w-screen flex-col items-center text-slate-700">
+      <main className="flex min-h-screen w-screen flex-col items-center text-slate-700">
         <NavBar />
         <div className="flex flex-col gap-6 mx-12 mt-14 justify-center items-center align-top">
           <div className="flex flex-row items-center justify-center min-w-[448px]">
@@ -106,9 +106,9 @@ const ExampleComponent = () => {
 
 const YourComponent = () => {
   return (
-    <div className="relative">
+    <div className="relative w-full">
       {/* Replace 'your-image.jpg' with your actual image source */}
-      <Image
+      <img
         src="/oryx_copy.jpg"
         alt="Your Image Alt Text"
         layout="responsive"
