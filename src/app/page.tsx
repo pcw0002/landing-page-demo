@@ -1,51 +1,32 @@
 "use client";
 
-import Image from "next/image";
-import NavBar from "@/components/NavBar";
 import InfoCard from "@/components/InfoCard";
-import { Button } from "@/components/ui/button";
+import NavBar from "@/components/NavBar";
 
-import { cardData } from "@/data/cardData";
-import OpenIcon from "@mui/icons-material/OpenInNew";
 import { Toaster } from "@/components/ui/toaster";
-import { useToast } from "@/components/ui/use-toast";
-import { ToastAction } from "@/components/ui/toast";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import { cardData } from "@/data/cardData";
 
 import { TypeAnimation } from "react-type-animation";
 
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-
-import PublicIcon from "@mui/icons-material/Public";
-import CallIcon from "@mui/icons-material/Call";
-import EmailIcon from "@mui/icons-material/Email";
-import { ReactNode } from "react";
 import Link from "next/link";
-
+import { ContactUsButton } from "../components/ContactUsButton";
+import CallMadeIcon from '@mui/icons-material/CallMadeRounded';
+import East from '@mui/icons-material/EastRounded';
 export default function Home() {
   return (
     <>
       <main className="flex flex-col items-center text-slate-700">
         <NavBar />
-        <div className="flex flex-col gap-6 mx-12 mt-14 justify-center items-center align-top">
-          <div className="flex flex-row items-center justify-center min-w-[448px]">
-            <div className="text-5xl font-bold whitespace-nowrap">
-              Where are my&nbsp;
-            </div>
+        <div className="flex flex-col gap-3 sm:gap-6 mx-12 mt-6 sm:mt-14 justify-center items-center align-top">
+          <div
+            className="flex flex-col md:flex-row items-center justify-center md:min-w-[448px]
+          font-bold text-4xl sm:text-5xl 2xl:text-6xl"
+          >
+            <div className="whitespace-nowrap">Where are my&nbsp;</div>
             {<ExampleComponent />}
           </div>
 
-          <p className="mb-2 mt-2 text-xl text-slate-500 max-w-xl text-center">
+          <p className="mb-2 mt-2 text-md sm:text-xl text-slate-500 max-w-xl text-center">
             Track your animals and monitor the status of your ranch like never
             before with <b>MicroTraks Ranch.</b>
           </p>
@@ -56,9 +37,13 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2"
               >
-                <button className="px-6 py-2 text-lg font-semibold text-white transition duration-200 ease-in-out bg-green-700 border-solid border-2 hover:border-green-600 hover:bg-green-600 border-green-700 rounded-md  hover:custom-scale-102">
-                  Go to Ranch
-                </button>{" "}
+                <button className="px-2 sm:px-4 py-2 text-lg font-semibold text-white transition duration-200 ease-in-out bg-green-700 border-solid border-2 hover:border-green-600 hover:bg-green-600 border-green-700 rounded-md  hover:custom-scale-102">
+                  <div className="flex flex-row gap-1 items-center justify-center">
+                    <div>Go to Ranch</div>
+                    <CallMadeIcon fontSize="small" />
+
+                  </div>
+                </button>
               </Link>
 
               <p className="mt-1 italic text-sm text-gray-500">
@@ -67,19 +52,21 @@ export default function Home() {
             </div>
 
             <ContactUsButton>
-              <button className="px-6 py-2 ml-4 text-lg font-semibold  text-green-700 transition duration-200 border-solid border-2 border-green-700 ease-in-out bg-transparent hover:bg-gray-100 rounded-md hover:bg-gray-100 hover:custom-scale-102">
+              <button className="px-2 sm:px-6 py-2 ml-4 text-lg font-semibold  text-green-700 transition duration-200 border-solid border-2 border-green-700 ease-in-out bg-transparent hover:bg-gray-100 rounded-md hover:bg-gray-100 hover:custom-scale-102">
                 Contact Us
               </button>
             </ContactUsButton>
           </div>
         </div>
-        <div className="-mt-48 -mb-28 -z-50">
+        <div className="-mt-10 -mb-6 md:-mt-32 md:-mb-20 lg:-mt-56 lg:-mb-28 xl:-mt-72 2xl:-mt-96 2xl:-mb-36 -z-50 w-full">
           <YourComponent />
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-10  mx-12">
-          <div className="text-5xl font-semibold">We've got you covered.</div>
-          <div className="lg:px-12 pb-16 grid text-center grid-cols-2 gap-3 lg:max-w-5xl lg:mb-0 lg:grid-cols-3">
+        <div className="flex flex-col items-center justify-center gap-10  mx-3 sm:mx-8">
+          <div className="text-3xl sm:text-4xl  md:text-[44px]  2xl:text-6xl font-semibold text-center">
+            We&apos;ve got you covered.
+          </div>
+          <div className="lg:px-12 pb-16 grid text-center grid-cols-2 gap-3 2xl:gap-12 lg:max-w-5xl xl:max-w-6xl md:grid-cols-3">
             {cardData.map((card) => (
               <InfoCard
                 key={card.title}
@@ -98,7 +85,7 @@ export default function Home() {
             className="text-sm text-gray-500 hover:text-gray-700"
             href="https://www.microtraks.com"
           >
-            © 2023 MicroTraks, Inc.
+            © 2024 MicroTraks, Inc.
           </a>
         </div>
       </main>
@@ -107,14 +94,26 @@ export default function Home() {
   );
 }
 
+/**
+ *
+Location Tracking:
+Automatically collect...
+
+Historical Data:
+Actively monitor animals at water and feed stations, for example, with mesh zones created by MicroTraks receivers
+
+Ranch sensors:
+Monitor your ranch infrastructure remotely with MicroTraks' line of sensors, including water and gate
+ */
+
 const ExampleComponent = () => {
   return (
     <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
-        "kudu?",
+        "gemsbok?",
         2400, // wait 1s before replacing "Mice" with "Hamsters"
-        "gemsbock?",
+        "kudu?",
         2400,
         "cape buffalo?",
         2400,
@@ -127,10 +126,10 @@ const ExampleComponent = () => {
         "animals?",
         6000,
       ]}
-      wrapper="strong"
+      wrapper="span"
       // speed= {{type: 'keyStrokeDelayInMs', value: 100}}
       speed={8}
-      className="text-5xl font-bold whitespace-nowrap text-green-700"
+      className="whitespace-nowrap text-green-700"
       repeat={Infinity}
       cursor={true}
       preRenderFirstString={true}
@@ -140,7 +139,7 @@ const ExampleComponent = () => {
 
 const YourComponent = () => {
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <img
         src="/oryx_copy.jpg"
         alt="Oryx in a field"
@@ -151,79 +150,6 @@ const YourComponent = () => {
 
       {/* Gradient overlay */}
       <div className="absolute top-0 left-0 right-0 bottom-0 gradient-overlay"></div>
-    </div>
-  );
-};
-
-type ContactUsButtonProps = {
-  children: ReactNode;
-};
-
-export function ContactUsButton({ children }: ContactUsButtonProps) {
-  return (
-    <AlertDialog>
-      <AlertDialogTrigger asChild>
-        <div>{children}</div>
-      </AlertDialogTrigger>
-      <AlertDialogContent>
-        <AlertDialogHeader>
-          <AlertDialogTitle className="text-center text-2xl">
-            We'd love to hear from you
-          </AlertDialogTitle>
-          <AlertDialogDescription className="flex justify-center">
-            <ContactInfo />
-          </AlertDialogDescription>
-        </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogCancel>Done</AlertDialogCancel>
-        </AlertDialogFooter>
-      </AlertDialogContent>
-    </AlertDialog>
-  );
-}
-
-const ContactInfo = () => {
-  const { toast } = useToast();
-
-  return (
-    <div className="flex flex-col space-y-2 my-4 text-lg">
-      <div className="flex items-center space-x-2">
-        <a
-          href="https://www.microtraks.com/contact"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center space-x-2"
-        >
-          <PublicIcon className="text-green-700" />
-          <button>microtraks.com/contact</button>
-        </a>
-      </div>
-      <div className="flex items-center space-x-2">
-        <CallIcon className="text-green-700" />
-        <CopyToClipboard
-          text="(443) 995-8658"
-          onCopy={() => {
-            toast({
-              title: "Phone number copied to clipboard",
-            });
-          }}
-        >
-          <button>(443) 995-8658</button>
-        </CopyToClipboard>
-      </div>
-      <div className="flex items-center space-x-2">
-        <EmailIcon className="text-green-700" />
-        <CopyToClipboard
-          text="sales@microtraks.com"
-          onCopy={() => {
-            toast({
-              title: "Email copied to clipboard",
-            });
-          }}
-        >
-          <button>sales@microtraks.com</button>
-        </CopyToClipboard>
-      </div>
     </div>
   );
 };

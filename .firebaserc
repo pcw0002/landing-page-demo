@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "microtraks-tracking"
+  },
+  "targets": {
+    "microtraks-tracking": {
+      "hosting": {
+        "site": [
+          "microtraks-website"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

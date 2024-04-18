@@ -20,15 +20,15 @@ export enum IconType {
 export const cardData: Card[] = [
   {
     title: 'Location tracking',
-    description: 'Automatically collects periodic locations of each animal',
-    content: 'Automatically collects periodic locations of each animal',
+    description: 'Automatically capture periodic coordinates for each animal.',
+    content: 'Automatically collect periodic locations of each animal',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     image: 'https://picsum.photos/200/300',
     icon: IconType.Location
   },
   {
     title: 'Historical data',
-    description: 'View location and activity history for your animals',
+    description: 'View previous locations and activity history for your animals.',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     image: 'https://picsum.photos/200/300',
@@ -37,16 +37,16 @@ export const cardData: Card[] = [
   },
   {
     title: 'Geo-fencing',
-    description: 'Receive notifications for animals that escape their pens',
+    description: 'Designate your pens and receive notifications for animals that escape.',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
-    image: 'https://picsum.photos/200/300',
+    image: 'https://picsum.photos/200/3000',
     icon: IconType.GeoFence
 
   },
   {
     title: 'Zone reporting',
-    description: 'MicroTraks receivers create mesh zones that actively monitor animals, such as at water or feed stations',
+    description: 'Create mesh zones with MicroTraks receivers to actively monitor animals, like at water or feed stations.',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     image: 'https://picsum.photos/200/300',
@@ -55,7 +55,7 @@ export const cardData: Card[] = [
   },
   {
     title: 'Activity alerts',
-    description: 'Collect fine-grain animal activity and receive alerts based on activity thresholds',
+    description: 'Collect animal activity details and get alerts based on activity thresholds.',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     image: 'https://picsum.photos/200/300',
@@ -64,7 +64,7 @@ export const cardData: Card[] = [
   },
   {
     title: 'Ranch sensors',
-    description: 'Water, gate, and other sensors are available to remotely monitor ranch infrastructure',
+    description: 'Remotely monitor ranch infrastructure with available water, gate, and other sensors.',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
     image: 'https://picsum.photos/200/300',

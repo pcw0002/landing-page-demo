@@ -30,8 +30,8 @@ const getIcon = (icon: IconType) => {
         <div className="rounded-full bg-green-700">
           {" "}
           <LocationIcon
-            sx={{ color: "white" }}
-            className="p-1.5 w-12 h-12"
+            sx={{ color: "white", fontSize: 44  }}
+            className="p-1.5"
           />
         </div>
       );
@@ -39,8 +39,8 @@ const getIcon = (icon: IconType) => {
       return (
         <div className="rounded-full bg-green-700">
           <SensorIcon
-            sx={{ color: "white" }}
-            className="p-1.5 w-12 h-12"
+            sx={{ color: "white", fontSize: 44  }}
+            className="p-1.5"
           />
         </div>
       );
@@ -48,8 +48,8 @@ const getIcon = (icon: IconType) => {
       return (
         <div className="rounded-full bg-green-700">
           <AutoAwesomeMosaicOutlinedIcon
-            sx={{ color: "white" }}
-            className="p-1.5 w-12 h-12"
+            sx={{ color: "white", fontSize: 44  }}
+            className="p-1.5"
           />
         </div>
       );
@@ -57,8 +57,8 @@ const getIcon = (icon: IconType) => {
       return (
         <div className="rounded-full bg-green-700">
           <QueryStatsOutlinedIcon
-            sx={{ color: "white" }}
-            className="p-2 w-12 h-12"
+            sx={{ color: "white", fontSize: 44  }}
+            className="p-2"
           />
         </div>
       );
@@ -68,8 +68,8 @@ const getIcon = (icon: IconType) => {
         <div className="rounded-full bg-green-700">
           {" "}
           <JoinInnerOutlinedIcon
-            sx={{ color: "white" }}
-            className="p-2 w-12 h-12"
+            sx={{ color: "white", fontSize: 44  }}
+            className="p-2"
           />
         </div>
       );
@@ -78,8 +78,8 @@ const getIcon = (icon: IconType) => {
       return (
         <div className="rounded-full bg-green-700">
           <AnnouncementOutlinedIcon
-            sx={{ color: "white" }}
-            className="p-2 w-12 h-12 scale-x-[-1] "
+            sx={{ color: "white", fontSize: 44 }}
+            className="p-2 scale-x-[-1]"
           />
         </div>
       );
@@ -96,11 +96,11 @@ const InfoCard = ({
   icon,
 }: InfoCardProps) => {
   return (
-    <Card>
-      <CardIcon>{getIcon(icon)}</CardIcon>
+    <Card >
+      <CardIcon className="flex items-center justify-center mt-2">{getIcon(icon)}</CardIcon>
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription className="text-sm">{description}</CardDescription>
+        <CardTitle className="text-xl lg:text-2xl font-semibold leading-none tracking-tight text-slate-800">{title}</CardTitle>
+        <CardDescription className="text-sm lg:text-md">{description}</CardDescription>
       </CardHeader>
       {/* <CardContent>
         {content}

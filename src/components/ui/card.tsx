@@ -9,8 +9,8 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border border-neutral-200 bg-white text-neutral-950 shadow-sm dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50"
-      + "group px-5 py-4 transition-all hover:custom-scale-102 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30",
+      "flex flex-col items-center  rounded-lg border border-neutral-200 bg-white text-neutral-950 shadow-sm dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50"
+      + "group px-1 sm:px-5 py-4 transition-all hover:custom-scale-102 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30",
       className
     )}
     {...props}
@@ -28,14 +28,13 @@ const CardIcon = React.forwardRef<
     className={cn(
       // Rounded with background as primary color
       // center it
-      "flex items-center justify-center pt-2",
+      "",
       className
     )}
     {...props}
   />
 ))
 CardIcon.displayName = "CardIcon"
-
 
 const CardHeader = React.forwardRef<
   HTMLDivElement,
@@ -56,7 +55,7 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn(
-      "text-2xl font-semibold leading-none tracking-tight text-slate-800",
+      "",
       className
     )}
     {...props}
@@ -96,4 +95,5 @@ const CardFooter = React.forwardRef<
 ))
 CardFooter.displayName = "CardFooter"
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent, CardIcon }
+export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardIcon, CardTitle }
+
